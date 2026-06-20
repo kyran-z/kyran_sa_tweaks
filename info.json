@@ -1,0 +1,9 @@
+{
+  "name": "kyran_sa_tweaks",
+  "version": "1.0.0",
+  "factorio_version": "2.0",
+  "title": "Kyran's tweaks",
+  "author": "Kyran",
+  "description": "Changes various things in SA",
+  "dependencies": ["base >= 2.0", "space-age >= 1.0"]
+}
