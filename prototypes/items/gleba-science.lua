@@ -1,6 +1,6 @@
 -- disable spoilage
-data.raw["tool"]["agricultural-science-pack"].spoil_ticks = 0
-data.raw["tool"]["agricultural-science-pack"].spoil_result = "agricultural-science-pack"
+data.raw.item["agricultural-science-pack"].spoil_ticks = 0
+data.raw.item["agricultural-science-pack"].spoil_result = "agricultural-science-pack"
 
 -- changes recipe
 data.raw.recipe["agricultural-science-pack"].energy_required = 10

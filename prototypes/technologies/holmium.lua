@@ -12,10 +12,6 @@ data:extend({
                 change = 0.1
             }, {
                 type = "change-recipe-productivity",
-                recipe = "ammonial-holmium-solution",
-                change = 0.1
-            }, {
-                type = "change-recipe-productivity",
                 recipe = "holmium-plate",
                 change = 0.1
             }
@@ -35,3 +31,12 @@ data:extend({
         essential = false
     }
 })
+
+if mods["extraplanetary-production"] then
+    local effects = data.raw.technology['holmium-productivity'].effects
+    table.insert(effects, {
+        type = "change-recipe-productivity",
+        recipe = "ammonial-holmium-solution",
+        change = 0.1
+    })
+end
