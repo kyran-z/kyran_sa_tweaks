@@ -29,11 +29,13 @@ deeplm_entity.name = "deep-land-mine"
 deeplm_entity.minable.result = "deep-land-mine"
 deeplm_entity.trigger_radius = 1
 deeplm_entity.timeout = 10 * 60
-deeplm_entity.picture_safe.tint = {0.2, 0.2, 0.2, 0.5}
-deeplm_entity.picture_set.tint = {0.2, 0.2, 0.2, 0.5}
+deeplm_entity.picture_safe.tint = {0.3, 0.3, 0.3, 0.5}
+deeplm_entity.picture_set.tint = {0.3, 0.3, 0.3, 0.5}
 
 deeplm_entity.flags = {"placeable-player", "placeable-enemy", "player-creation", "not-on-map"}
-deeplm_entity.action.action_delivery.source_effects = {
+deeplm_entity.action = nil
+deeplm_entity.corpse = nil
+deeplm_entity.dying_trigger_effect = {
     {
         type = "create-entity",
         entity_name = "explosion"
