@@ -13,4 +13,12 @@ function data_util.copyTable(datatable)
     return tblRes
 end
 
+function data_util.add_recipe_unlock(tech_name, recipe_name)
+    local technology = data.raw.technology[tech_name]
+    table.insert(technology.effects, {
+        type = "unlock-recipe",
+        recipe = recipe_name
+    })
+end
+
 return data_util
