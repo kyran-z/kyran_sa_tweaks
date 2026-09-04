@@ -2,34 +2,6 @@ local util = require("data-util")
 
 data:extend({{
     type = "recipe",
-    name = "casting-engine-unit",
-    icons = {{
-        icon = "__base__/graphics/icons/engine-unit.png"
-    }, {
-        icon = "__space-age__/graphics/icons/fluid/molten-iron.png",
-        scale = 0.33,
-        shift = {8, -8}
-    }},
-    categories = {"metallurgy"},
-    subgroup = "vulcanus-processes",
-    order = "b[casting]-f[casting-engine-unit]",
-    energy_required = 10,
-    ingredients = {{
-        type = "fluid",
-        name = "molten-iron",
-        amount = 60
-    }},
-    results = {{
-        type = "item",
-        name = "engine-unit",
-        amount = 1
-    }},
-    enabled = false,
-    allow_productivity = true,
-    allow_decomposition = false,
-    auto_recycle = false
-}, {
-    type = "recipe",
     name = "sulfur-crystallization",
     icons = {{
         icon = "__base__/graphics/icons/sulfur.png"
@@ -124,17 +96,73 @@ data:extend({{
     allow_productivity = true,
     allow_decomposition = false,
     auto_recycle = false
+}, {
+    type = "recipe",
+    name = "bio-oil",
+    categories = {"organic"},
+    subgroup = "agriculture-processes",
+    energy_required = 5,
+    ingredients = {{
+        type = "item",
+        name = "pentapod-egg",
+        amount = 1
+    }, {
+        type = "item",
+        name = "coal",
+        amount = 1
+    }, {
+        type = "fluid",
+        name = "water",
+        amount = 50
+    }},
+    results = {{
+        type = "fluid",
+        name = "bio-oil",
+        amount = 100
+    }},
+    enabled = false,
+    allow_productivity = true,
+    allow_decomposition = false,
+    auto_recycle = false
 }})
 -- insert recipes in technologies
-util.add_recipe_unlock("foundry", "casting-engine-unit")
 util.add_recipe_unlock("recycling", "oil-sludge-separation")
 util.add_recipe_unlock("recycling", "holmium-crystallization")
-
 util.add_recipe_unlock("tungsten-carbide", "coal-synthesis")
 util.add_recipe_unlock("tungsten-carbide", "sulfur-crystallization")
+util.add_recipe_unlock("bioflux-processing", "bio-oil")
 
 -- various modification
-local holmium_plate = data.raw.recipe["holmium-plate"]
+local bioplastic = data.raw["recipe"]["bioplastic"]
+table.insert(bioplastic.ingredients, {
+    type = "fluid",
+    name = "bio-oil",
+    amount = 5
+})
+
+local rocket_from_jelly = data.raw["recipe"]["rocket-fuel-from-jelly"]
+rocket_from_jelly.ingredients = {{
+    type = "fluid",
+    name = "bio-oil",
+    amount = 5
+}, {
+    type = "item",
+    name = "jelly",
+    amount = 30
+}, {
+    type = "item",
+    name = "bioflux",
+    amount = 2
+}}
+
+local carbon_fiber = data.raw["recipe"]["carbon-fiber"]
+table.insert(carbon_fiber.ingredients, {
+    type = "fluid",
+    name = "bio-oil",
+    amount = 5
+})
+
+local holmium_plate = data.raw["recipe"]["holmium-plate"]
 holmium_plate.categories = {"smelting", "metallurgy"}
 holmium_plate.ingredients = {{
     type = "item",

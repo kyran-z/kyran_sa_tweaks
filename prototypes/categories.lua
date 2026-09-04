@@ -10,5 +10,6 @@ add_recipe_category("logistic-robot", "electromagnetics")
 add_recipe_category("construction-robot", "electromagnetics")
 add_recipe_category("roboport", "electromagnetics")
 
-add_recipe_category("holmium-solution", "organic")
-add_recipe_category("coal-synthesis", "organic")
+add_recipe_category("engine-unit", "metallurgy")
+
+add_recipe_category("ice-melting", "cryogenics")
