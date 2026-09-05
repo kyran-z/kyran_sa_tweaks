@@ -1,14 +1,13 @@
--- technologies
-require("prototypes.technologies")
-
--- items
+-- stuff
+require("prototypes.items.items")
+require("prototypes.items.fluids")
 require("prototypes.items.fish")
 require("prototypes.items.mine")
-require("prototypes.items.fluids")
 require("prototypes.recipes")
 require("prototypes.fixes")
 require("prototypes.categories")
 require("prototypes.resources")
+require("prototypes.technologies")
 -- planet gen
 require("prototypes.planet.vulcanus")
 require("prototypes.planet.aquilo")
@@ -40,8 +39,12 @@ require("prototypes.planet.aquilo")
 ---- fix bio-oil pic
 
 -- aquilo
----- ammoniacal solution gives (50 solution -> 50 ammonia + 5 ice)
----- quartz resource minable
----- quartz smelting (1 quartz + 1 carbon -> 2 silicon) (metallurgy)
----- silicon cell (1 silicon + 1 blue circuit -> 1 silicon cell) (electromagnetic)
----- quantum processor (change lithium plate and blue circuits for 2 silicon cells) (move recipe to cryogenics)
+---- change crude oil into bitumen, add bitumen separation (100 bitumen -> 4 coal + 100 petroleum gas) (chemistry)
+---- new recipe for concrete (500 bitumen + 1 iron plate -> 20 concrete) (metallurgy)
+---- change solid fuel from ammonia recipe (15 ammonia + 5 petroleum -> 1 solid fuel)
+
+---- add quartz resource minable
+---- quartz smelting (1 quartz + 1 coal -> 2 silicon) (metallurgy)
+---- silicon cell (1 silicon + 5 sulfuric acid -> 1 silicon cell) (electromagnetic)
+---- alternative blue circuit recipe (1 lithium plate + 2 silicon cell + 5 ammonia -> 2 blue circuit) (electromagnetic)
+---- quantum processor (move recipe to cryogenics)
