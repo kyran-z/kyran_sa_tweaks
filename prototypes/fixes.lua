@@ -16,3 +16,5 @@ table.insert(data.raw["plant"]["yumako-tree"].minable.results,
     { type = "item", name = "wood", amount = 5 })
 table.insert(data.raw["plant"]["jellystem"].minable.results,
     { type = "item", name = "wood", amount = 5 })
+
+data.raw["planet"]["fulgora"].surface_properties["robot-energy-usage"] = 0.5

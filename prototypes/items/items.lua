@@ -1,4 +1,5 @@
 local item_sounds = require("__base__.prototypes.item_sounds")
+local space_age_item_sounds = require("__space-age__.prototypes.item_sounds")
 
 data:extend({
     {
@@ -51,5 +52,15 @@ data:extend({
         pick_sound = item_sounds.resource_inventory_pickup,
         drop_sound = item_sounds.resource_inventory_move,
         default_import_location = "aquilo", stack_size = 100, weight = 5 * kg
+    }, {
+        type = "item", name = "holmium-bacteria",
+        icon = "__kyran_sa_tweaks__/graphics/items/holmium-bacteria.png",
+        subgroup = "fulgora-processes",
+        order = "b[holmium]-g[holmium-bacteria]",
+        inventory_move_sound = space_age_item_sounds.agriculture_inventory_move,
+        pick_sound = space_age_item_sounds.agriculture_inventory_pickup,
+        drop_sound = space_age_item_sounds.agriculture_inventory_move,
+        stack_size = 50, default_import_location = "fulgora", weight = 1 * kg,
+        spoil_ticks = 1 * minute, spoil_result = "holmium-ore"
     }
 })

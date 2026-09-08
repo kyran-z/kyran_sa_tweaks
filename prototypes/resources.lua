@@ -11,17 +11,32 @@ carbon_resource.factoriopedia_simulation = { init = make_resource("carbon") }
 data.raw["autoplace-control"]["vulcanus_coal"].localised_name = {
     "", "[entity=carbon] ", { "entity-name.carbon" }
 }
+carbon_resource.stages = {
+    sheet = {
+        filename = "__kyran_sa_tweaks__/graphics/ores/carbon-ore.png",
+        priority = "extra-high", size = 128, frame_count = 8,
+        variation_count = 8, scale = 0.5
+    }
+}
 
 local quartz_resource = util.copyTable(data.raw["resource"]["calcite"])
 quartz_resource.name = "quartz"
 quartz_resource.minable.result = "quartz"
 quartz_resource.map_color = { 225, 250, 250 }
+quartz_resource.category = "hard-solid"
 quartz_resource.icon = "__kyran_sa_tweaks__/graphics/items/quartz.png"
 quartz_resource.factoriopedia_simulation = { init = make_resource("quartz") }
 quartz_resource.autoplace = resource_autoplace.resource_autoplace_settings {
     name = "quartz", base_density = 50, base_spots_per_km2 = 25,
     has_starting_area_placement = true, regular_rq_factor_multiplier = 0.8,
     candidate_spot_count = 50
+}
+quartz_resource.stages = {
+    sheet = {
+        filename = "__kyran_sa_tweaks__/graphics/ores/quartz-ore.png",
+        priority = "extra-high", size = 128, frame_count = 8,
+        variation_count = 8, scale = 0.5
+    }
 }
 
 local bitumen_resource = util.copyTable(data.raw["resource"]["crude-oil"])
@@ -42,3 +57,8 @@ data.raw["autoplace-control"]["aquilo_crude_oil"].localised_name = {
 }
 
 data:extend({ carbon_resource, quartz_resource, bitumen_resource })
+
+local tungsten_resource = data.raw["resource"]["tungsten-ore"]
+tungsten_resource.minable.fluid_amount = 1
+tungsten_resource.minable.required_fluid = "lubricant"
+
