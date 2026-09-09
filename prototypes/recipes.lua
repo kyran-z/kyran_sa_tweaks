@@ -82,15 +82,8 @@ data:extend({
         auto_recycle = false, always_show_made_in = true
     }, {
         type = "recipe", name = "holmium-bacteria", categories = { "organic" },
-        icons = {
-            {
-                icon = "__space-age__/graphics/icons/fluid/holmium-solution.png",
-                scale = 0.4, shift = { 0, -4.8 }
-            }, {
-                icon = "__kyran_sa_tweaks__/graphics/items/holmium-bacteria.png",
-                scale = 0.25, shift = { 0, 7 }
-            }
-        }, subgroup = "fulgora-processes", energy_required = 1,
+        icon = "__kyran_sa_tweaks__/graphics/items/holmium-bacteria.png",
+        subgroup = "fulgora-processes", energy_required = 1,
         ingredients = {
             { type = "fluid", name = "holmium-solution", amount = 30 }
         }, results = {
@@ -103,6 +96,7 @@ data:extend({
         auto_recycle = false, always_show_made_in = true
     }, {
         type = "recipe", name = "holmium-bacteria-cultivation",
+        icon = "__kyran_sa_tweaks__/graphics/items/holmium-bacteria-cultivation.png",
         categories = { "organic" }, subgroup = "fulgora-processes",
         energy_required = 4, ingredients = {
             { type = "item", name = "holmium-bacteria", amount = 1 },
@@ -182,6 +176,17 @@ data:extend({
         results = { { type = "item", name = "silicon-cell", amount = 2 } },
         order = "d[quartz]-c[silicon-cell]", allow_productivity = true,
         auto_recycle = true, always_show_made_in = true
+    }, -- GENERAL
+    {
+        type = "recipe", name = "gravity-assembler",
+        categories = { "advanced-crafting", "crafting-in-space" },
+        ingredients = {
+            { type = "item", name = "assembling-machine-3", amount = 2 },
+            { type = "item", name = "carbon-fiber", amount = 10 },
+            { type = "item", name = "superconductor", amount = 10 },
+            { type = "item", name = "tungsten-carbide", amount = 20 }
+        }, energy_required = 20, enabled = false,
+        results = { { type = "item", name = "gravity-assembler", amount = 1 } }
     }
 })
 -- various modification

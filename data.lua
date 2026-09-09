@@ -1,13 +1,14 @@
 -- stuff
+require("prototypes.entities")
 require("prototypes.items.items")
 require("prototypes.items.fluids")
 require("prototypes.items.fish")
 require("prototypes.items.mine")
 require("prototypes.recipes")
 require("prototypes.fixes")
-require("prototypes.categories")
 require("prototypes.resources")
 require("prototypes.technologies")
+require("prototypes.categories")
 -- planet gen
 require("prototypes.planet.vulcanus")
 require("prototypes.planet.aquilo")

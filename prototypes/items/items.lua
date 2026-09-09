@@ -62,5 +62,14 @@ data:extend({
         drop_sound = space_age_item_sounds.agriculture_inventory_move,
         stack_size = 50, default_import_location = "fulgora", weight = 1 * kg,
         spoil_ticks = 1 * minute, spoil_result = "holmium-ore"
+    }, {
+        type = "item", name = "gravity-assembler",
+        subgroup = "production-machine", order = "c[assembling-machine-4]",
+        inventory_move_sound = item_sounds.metal_large_inventory_move,
+        pick_sound = item_sounds.metal_large_inventory_pickup,
+        drop_sound = item_sounds.metal_large_inventory_move,
+        icon = "__kyran_sa_tweaks__/graphics/items/gravity-assembler.png",
+        icon_size = 64, stack_size = 5, default_import_location = "aquilo",
+        weight = 200, place_result = "gravity-assembler"
     }
 })

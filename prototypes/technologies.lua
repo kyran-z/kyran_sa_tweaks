@@ -94,7 +94,7 @@ data:extend({
         research_trigger = { type = "mine-entity", entities = { "quartz" } }
     }, {
         type = "technology", name = "holmium-bacteria-cultivation",
-        icon = "__kyran_sa_tweaks__/graphics/items/holmium-bacteria.png",
+        icon = "__kyran_sa_tweaks__/graphics/technology/holmium-bacteria-cultivation.png",
         icon_size = 256, effects = {
             { type = "unlock-recipe", recipe = "holmium-bacteria" },
             { type = "unlock-recipe", recipe = "holmium-bacteria-cultivation" },
@@ -106,8 +106,26 @@ data:extend({
             count = 1000, ingredients = {
                 { "automation-science-pack", 1 },
                 { "logistic-science-pack", 1 }, { "chemical-science-pack", 1 },
-                { "production-science-pack", 1 },
+                { "production-science-pack", 1 }, { "space-science-pack", 1 },
                 { "agricultural-science-pack", 1 },
+                { "electromagnetic-science-pack", 1 }
+            }, time = 60
+        }
+    }, {
+        type = "technology", name = "gravity-assembler",
+        icon = "__kyran_sa_tweaks__/graphics/technology/gravity-assembler.png",
+        icon_size = 640,
+        effects = { { type = "unlock-recipe", recipe = "gravity-assembler" } },
+        prerequisites = {
+            "carbon-fiber", "electromagnetic-science-pack",
+            "metallurgic-science-pack"
+        }, unit = {
+            count = 2000, ingredients = {
+                { "automation-science-pack", 1 },
+                { "logistic-science-pack", 1 }, { "chemical-science-pack", 1 },
+                { "production-science-pack", 1 }, { "space-science-pack", 1 },
+                { "agricultural-science-pack", 1 },
+                { "metallurgic-science-pack", 1 },
                 { "electromagnetic-science-pack", 1 }
             }, time = 60
         }
@@ -137,7 +155,6 @@ data_util.add_recipe_unlock("foundry", "stone-from-lava")
 data_util.add_recipe_unlock("calcite-processing", "plastic-vulcanization")
 
 -- effects
-
 table.insert(data.raw["technology"]["plastic-bar-productivity"].effects, {
     type = "change-recipe-productivity", recipe = "plastic-vulcanization",
     change = 0.1
