@@ -4,6 +4,12 @@ local function add_recipe_category(recipe_name, category)
     table.insert(recipe.categories, category)
 end
 
+data.raw["recipe"]["carbon"].categories = { "smelting" }
+data.raw["recipe"]["quantum-processor"].categories = { "cryogenics" }
+data.raw["recipe"]["electrolyte"].categories = { "chemistry" }
+data.raw["recipe"]["holmium-plate"].categories = { "smelting", "metallurgy" }
+data.raw["recipe"]["holmium-solution"].categories = { "organic" }
+
 add_recipe_category("electric-engine-unit", "electromagnetics")
 add_recipe_category("flying-robot-frame", "electromagnetics")
 add_recipe_category("logistic-robot", "electromagnetics")
@@ -15,10 +21,6 @@ add_recipe_category("lithium-plate", "metallurgy")
 add_recipe_category("coal-synthesis", "organic")
 
 add_recipe_category("ice-melting", "cryogenics")
-data.raw["recipe"]["quantum-processor"].categories = { "cryogenics" }
-data.raw["recipe"]["electrolyte"].categories = { "chemistry" }
-data.raw["recipe"]["holmium-plate"].categories = { "smelting", "metallurgy" }
-data.raw["recipe"]["holmium-solution"].categories = { "organic" }
 
 -- new stuff craftable in the gravity assembler
 add_recipe_category("iron-chest", "crafting-in-space")

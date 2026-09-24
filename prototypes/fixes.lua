@@ -18,3 +18,12 @@ table.insert(data.raw["plant"]["jellystem"].minable.results,
     { type = "item", name = "wood", amount = 5 })
 
 data.raw["planet"]["fulgora"].surface_properties["robot-energy-usage"] = 0.5
+data.raw["recipe"]["agricultural-science-pack"].results = {
+    {
+        type = "item", name = "agricultural-science-pack", amount = 1,
+        reset_freshness_on_craft = true
+    }
+}
+
+data.raw["assembling-machine"]["biochamber"].fast_replaceable_group =
+    "chemical-plant"

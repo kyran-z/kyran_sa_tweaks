@@ -70,6 +70,6 @@ data:extend({
         drop_sound = item_sounds.metal_large_inventory_move,
         icon = "__kyran_sa_tweaks__/graphics/items/gravity-assembler.png",
         icon_size = 64, stack_size = 5, default_import_location = "aquilo",
-        weight = 200, place_result = "gravity-assembler"
+        weight = 200 * kg, place_result = "gravity-assembler"
     }
 })

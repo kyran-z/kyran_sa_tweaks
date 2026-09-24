@@ -101,10 +101,13 @@ data:extend({
         energy_required = 4, ingredients = {
             { type = "item", name = "holmium-bacteria", amount = 1 },
             { type = "item", name = "bioflux", amount = 1 }
-        },
-        results = { { type = "item", name = "holmium-bacteria", amount = 4 } },
-        order = "b[holmium]-h[holmium-bacteria-cultivation]", enabled = false,
-        allow_productivity = true, allow_decomposition = false,
+        }, results = {
+            {
+                type = "item", name = "holmium-bacteria", amount = 4,
+                reset_freshness_on_craft = true
+            }
+        }, order = "b[holmium]-h[holmium-bacteria-cultivation]",
+        enabled = false, allow_productivity = true, allow_decomposition = false,
         auto_recycle = false, always_show_made_in = true
     }, --- GLEBA
     {
@@ -190,92 +193,99 @@ data:extend({
     }
 })
 -- various modification
-local superconductor = data.raw["recipe"]["superconductor"]
+data.raw["recipe"]["bioflux"].results = {
+    {
+        type = "item", name = "bioflux", amount = 4,
+        reset_freshness_on_craft = true
+    }
+}
+
+data.raw["recipe"]["nutrients-from-bioflux"].ingredients = {
+    { type = "item", name = "bioflux", amount = 2 }
+}
+data.raw["recipe"]["nutrients-from-bioflux"].results = {
+    {
+        type = "item", name = "nutrients", amount = 50,
+        reset_freshness_on_craft = true
+    }
+}
+
 data_util.remove_ingredient("superconductor", "light-oil")
-table.insert(superconductor.ingredients,
+table.insert(data.raw["recipe"]["superconductor"].ingredients,
     { type = "fluid", name = "light-oil", amount = 25 })
 
-local electrolyte = data.raw["recipe"]["electrolyte"]
-electrolyte.ingredients = {
+data.raw["recipe"]["electrolyte"].ingredients = {
     { type = "fluid", name = "light-oil", amount = 10 },
     { type = "item", name = "holmium-ore", amount = 1 },
     { type = "item", name = "stone", amount = 1 }
 }
 
-local coal_liquefaction = data.raw["recipe"]["coal-liquefaction"]
-coal_liquefaction.results = {
-    { type = "fluid", name = "heavy-oil", amount = 90 },
-    { type = "fluid", name = "light-oil", amount = 40 }
+data.raw["recipe"]["coal-liquefaction"].results = {
+    { type = "fluid", name = "heavy-oil", amount = 100 },
+    { type = "fluid", name = "light-oil", amount = 30 }
 }
 
-local cryogenic_plant = data.raw["recipe"]["cryogenic-plant"]
-table.insert(cryogenic_plant.ingredients,
+table.insert(data.raw["recipe"]["cryogenic-plant"].ingredients,
     { type = "item", name = "silicon-cell", amount = 20 })
 
-local foundation = data.raw["recipe"]["foundation"]
-foundation.ingredients = {
+data.raw["recipe"]["foundation"].ingredients = {
     { type = "item", name = "stone", amount = 20 },
     { type = "item", name = "tungsten-plate", amount = 4 },
     { type = "item", name = "carbon-fiber", amount = 4 },
     { type = "item", name = "silicon", amount = 4 }
 }
-foundation.results = { { type = "item", name = "foundation", amount = 4 } }
+data.raw["recipe"]["foundation"].results = {
+    { type = "item", name = "foundation", amount = 4 }
+}
 data.raw["recipe"]["concrete"].auto_recycle = false
 
-local quantum_processor = data.raw["recipe"]["quantum-processor"]
-table.insert(quantum_processor.ingredients,
-    { type = "item", name = "silicon-cell", amount = 1 })
 data_util.remove_ingredient("quantum-processor", "processing-unit")
+table.insert(data.raw["recipe"]["quantum-processor"].ingredients,
+    { type = "item", name = "silicon-cell", amount = 1 })
 
-local solid_fuel_from_ammonia = data.raw["recipe"]["solid-fuel-from-ammonia"]
-solid_fuel_from_ammonia.ingredients = {
+data.raw["recipe"]["solid-fuel-from-ammonia"].ingredients = {
     { type = "fluid", name = "ammonia", amount = 15 },
     { type = "fluid", name = "petroleum-gas", amount = 5 }
 }
 
-local bioplastic = data.raw["recipe"]["bioplastic"]
-table.insert(bioplastic.ingredients,
+table.insert(data.raw["recipe"]["bioplastic"].ingredients,
     { type = "fluid", name = "bio-oil", amount = 5 })
 
-local rocket_from_jelly = data.raw["recipe"]["rocket-fuel-from-jelly"]
-rocket_from_jelly.ingredients = {
+data.raw["recipe"]["rocket-fuel-from-jelly"].ingredients = {
     { type = "fluid", name = "bio-oil", amount = 5 },
     { type = "item", name = "jelly", amount = 30 },
     { type = "item", name = "bioflux", amount = 2 }
 }
 
-local carbon_fiber = data.raw["recipe"]["carbon-fiber"]
-table.insert(carbon_fiber.ingredients,
+table.insert(data.raw["recipe"]["carbon-fiber"].ingredients,
     { type = "fluid", name = "bio-oil", amount = 5 })
 
-local holmium_plate = data.raw["recipe"]["holmium-plate"]
-holmium_plate.ingredients = {
+data.raw["recipe"]["holmium-plate"].ingredients = {
     { type = "item", name = "holmium-ore", amount = 1 }
 }
 
-local holmium_solution = data.raw["recipe"]["holmium-solution"]
-holmium_solution.ingredients = {
+data.raw["recipe"]["holmium-solution"].ingredients = {
     { type = "item", name = "holmium-bacteria", amount = 1 },
     { type = "fluid", name = "water", amount = 10 }
 }
-holmium_solution.results = {
+data.raw["recipe"]["holmium-solution"].results = {
     { type = "fluid", name = "holmium-solution", amount = 10 }
 }
-holmium_solution.energy_required = 1
-holmium_solution.order = "b[holmium]-i[holmium-solution]"
+data.raw["recipe"]["holmium-solution"].energy_required = 1
+data.raw["recipe"]["holmium-solution"].order = "b[holmium]-i[holmium-solution]"
 
-local carbon = data.raw["recipe"]["carbon"]
-carbon.categories = { "smelting" }
-carbon.auto_recycle = false
-carbon.energy_required = 3.2
-carbon.enabled = true
-carbon.ingredients = { { type = "item", name = "wood", amount = 2 } }
+data.raw["recipe"]["carbon"].auto_recycle = false
+data.raw["recipe"]["carbon"].energy_required = 3.2
+data.raw["recipe"]["carbon"].enabled = true
+data.raw["recipe"]["carbon"].ingredients = {
+    { type = "item", name = "wood", amount = 2 }
+}
 
-local coal_synthesis = data.raw["recipe"]["coal-synthesis"]
-coal_synthesis.results = { { type = "item", name = "coal", amount = 5 } }
+data.raw["recipe"]["coal-synthesis"].results = {
+    { type = "item", name = "coal", amount = 5 }
+}
 
-local simple_coal_liquefaction = data.raw["recipe"]["simple-coal-liquefaction"]
-simple_coal_liquefaction.ingredients = {
+data.raw["recipe"]["simple-coal-liquefaction"].ingredients = {
     { type = "item", name = "carbon", amount = 10 },
     { type = "item", name = "calcite", amount = 2 },
     { type = "fluid", name = "sulfuric-acid", amount = 25 }

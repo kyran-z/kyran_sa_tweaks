@@ -22,8 +22,6 @@ require("prototypes.surface-conditions")
 ---- add sulfur crystallization (100 sulfuric acid -> 1 sulfur)
 ---- rebalance coal synthesis (1 sulfur + 5 carbon + 10 water -> 5 coal) and add it also to vulcanus tech
 
----- add alternative recipe for uranium piercing rounds that uses tunsgten carbide instead (rename them heavy piercing rounds)
-
 -- fulgora
 ---- remove solid fuel and holmium from scrap sorting
 ---- change heavy oil ocean into oily sludge ocean
