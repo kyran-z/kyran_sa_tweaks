@@ -16,34 +16,26 @@ require("prototypes.surface-conditions")
 
 -- proposed changes
 
--- vulcanus
----- change coal for carbon in planet generation 
----- remove coal to carbon recipe, no longer needed
----- add sulfur crystallization (100 sulfuric acid -> 1 sulfur)
----- rebalance coal synthesis (1 sulfur + 5 carbon + 10 water -> 5 coal) and add it also to vulcanus tech
+-- Vulcanus
+---- Changed coal for carbon in planet generation 
+---- Removed coal to carbon recipe
+---- Added sulfur crystallization for turning sulfuric acid directly into sulfur (only on vulcanus)
+---- Rebalanced coal synthesis to give more coal and added it to vulcanus tech
 
--- fulgora
----- remove solid fuel and holmium from scrap sorting
----- change heavy oil ocean into oily sludge ocean
----- sludge turns into water and holmium (100 sludge -> 10 heavy oil, 75 light oil, 15 holmium solution)
----- add holmium crystallization (10 holmium solution -> 1 holmium ore) 
+-- Fulgora
+---- Removed solid fuel and holmium from scrap sorting
+---- Changed heavy oil ocean into oily sludge ocean, refined into heavy oil, light oil and holmium solution
+---- Changed holmium chain, you get ore from solution, then smelt it into plates
+---- Added holmium bacteria, post gleba, to breed as much holmium as you like from bioflux
 
----- holmium bacteria loop
----- get some bacteria from solution (50 solution -> 1 bacteria) bacteria spoils into holmium ore
----- standard bacteria loop (1 bacteria + 1 bioflux -> 4 bacteria)
----- solution recipe (1 bacteria + 10 water -> 10 solution)
+-- Gleba
+---- Gleba trees now give wood as well as fruits
+---- Added a way to get carbon out of wood
+---- Added bio-oil, crafted from coal and jelly, a new required ingredient in various gleba recipe
+---- Bio-oil can also be used as flamethrower fuel, extremely effective against pentapods
 
--- gleba
----- make gleba trees give wood as well as fruits
----- wood to carbon and the new coal synthesis
----- make bio-oil from pentapod eggs and coal (1 egg + 1 coal + 50 water -> 100 bio-oil) -- burnable in flamethrowers
----- adjust gleba recipes, add bio-oil to plastic, rocket fuel and carbon fiber (very low amounts)
-
--- aquilo
----- change crude oil into bitumen, add bitumen separation (100 bitumen -> 4 coal + 100 petroleum gas) (chemistry)
----- new recipe for concrete (500 bitumen + 1 iron plate -> 20 concrete) (metallurgy)
----- change solid fuel from ammonia recipe (15 ammonia + 5 petroleum -> 1 solid fuel)
----- add quartz resource minable
----- quartz smelting (1 quartz  -> 1 silicon) (metallurgy)
----- silicon cell (1 silicon + 1 plastic + 5 sulfuric acid -> 2 silicon cell) (electromagnetic)
----- quantum processor (move recipe to cryogenics)
+-- Aquilo
+---- Completely changed planet generation to create a full arcipelago of icy islands
+---- Changed crude oil into bitumen seeps, separated into coal and petroleum gas
+---- Added quartz as a minable resource
+---- Quartz can be smelted into silicon and further processed into silicon cells, used in quantum processors

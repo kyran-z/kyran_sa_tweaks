@@ -193,6 +193,15 @@ data:extend({
     }
 })
 -- various modification
+table.insert(data.raw["recipe"]["cryogenic-science-pack"].ingredients,
+    { type = "item", name = "silicon", amount = 2 })
+data.raw["recipe"]["cryogenic-science-pack"].results = {
+    { type = "item", name = "cryogenic-science-pack", amount = 2 }, {
+        type = "fluid", name = "fluoroketone-hot", amount = 3,
+        ignored_by_stats = 3, ignored_by_productivity = 3
+    }
+}
+
 data.raw["recipe"]["bioflux"].results = {
     {
         type = "item", name = "bioflux", amount = 4,

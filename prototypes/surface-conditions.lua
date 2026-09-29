@@ -14,7 +14,7 @@ conditions.only_gleba = function()
     return { property = "pressure", max = 2000, min = 2000 }
 end
 conditions.only_aquilo = function()
-    return { property = "pressure", max = 600, min = 600 }
+    return { property = "pressure", max = 300, min = 300 }
 end
 
 set_conditions("sulfur-crystallization", conditions.only_vulcanus())

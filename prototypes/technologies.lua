@@ -89,7 +89,8 @@ data:extend({
         icon = "__kyran_sa_tweaks__/graphics/technology/silicon-processing.png",
         icon_size = 256, effects = {
             { type = "unlock-recipe", recipe = "silicon" },
-            { type = "unlock-recipe", recipe = "silicon-cell" }
+            { type = "unlock-recipe", recipe = "silicon-cell" },
+            { type = "unlock-recipe", recipe = "concrete-from-bitumen" }
         }, prerequisites = { "planet-discovery-aquilo" },
         research_trigger = { type = "mine-entity", entities = { "quartz" } }
     }, {
@@ -150,7 +151,6 @@ data_util.add_recipe_unlock("tungsten-carbide", "coal-synthesis")
 data_util.add_recipe_unlock("tungsten-carbide", "sulfur-crystallization")
 data_util.add_recipe_unlock("bioflux-processing", "bio-oil")
 data_util.add_recipe_unlock("planet-discovery-aquilo", "bitumen-separation")
-data_util.add_recipe_unlock("planet-discovery-aquilo", "concrete-from-bitumen")
 data_util.add_recipe_unlock("foundry", "stone-from-lava")
 data_util.add_recipe_unlock("calcite-processing", "plastic-vulcanization")
 
