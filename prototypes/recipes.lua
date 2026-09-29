@@ -146,7 +146,7 @@ data:extend({
         always_show_made_in = true
     }, {
         type = "recipe", name = "concrete-from-bitumen",
-        categories = { "crafting-with-fluid", "metallurgy" },
+        categories = { "crafting-with-fluid" },
         subgroup = "aquilo-processes", icons = {
             { icon = "__base__/graphics/icons/concrete.png" }, {
                 icon = "__kyran_sa_tweaks__/graphics/fluids/bitumen.png",
@@ -156,7 +156,7 @@ data:extend({
             { type = "fluid", name = "bitumen", amount = 100 },
             { type = "item", name = "silicon", amount = 1 }
         }, energy_required = 10, allow_decomposition = false, enabled = false,
-        results = { { type = "item", name = "concrete", amount = 20 } },
+        results = { { type = "item", name = "concrete", amount = 10 } },
         allow_productivity = true, auto_recycle = false,
         always_show_made_in = true
     }, {
