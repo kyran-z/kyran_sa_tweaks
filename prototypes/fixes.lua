@@ -11,13 +11,16 @@ table.insert(data.raw["technology"]["stronger-explosives-7"].effects, {
 table.insert(data.raw["fluid-turret"]["flamethrower-turret"].attack_parameters
                  .fluids, { type = "bio-oil", damage_modifier = 1.2 })
 
--- add wood as result from mining gleba trees
+-- adds wood as result from mining gleba trees
 table.insert(data.raw["plant"]["yumako-tree"].minable.results,
     { type = "item", name = "wood", amount = 5 })
 table.insert(data.raw["plant"]["jellystem"].minable.results,
     { type = "item", name = "wood", amount = 5 })
 
+-- reduces robot consmuption on fulgora
 data.raw["planet"]["fulgora"].surface_properties["robot-energy-usage"] = 0.5
+
+-- makes agricultural science always craft fresh
 data.raw["recipe"]["agricultural-science-pack"].results = {
     {
         type = "item", name = "agricultural-science-pack", amount = 1,
@@ -25,5 +28,6 @@ data.raw["recipe"]["agricultural-science-pack"].results = {
     }
 }
 
+-- makes chemical plants fast-replacable into biochambers
 data.raw["assembling-machine"]["biochamber"].fast_replaceable_group =
     "chemical-plant"

@@ -49,7 +49,7 @@ create_new_explosion("deep-mine-explosion-nauvis", "water-shallow",
 create_new_explosion("deep-mine-explosion-fulgora", "oil-ocean-shallow",
     { { property = "magnetic-field", min = 99, max = 99 } }, deeplm_entity)
 create_new_explosion("deep-mine-explosion-aquilo", "ammoniacal-ocean",
-    { { property = "pressure", max = 600, min = 600 } }, deeplm_entity)
+    { { property = "pressure", max = 300, min = 300 } }, deeplm_entity)
 -- recipe
 local deeplm_recipe = util.copyTable(data.raw["recipe"]["land-mine"])
 deeplm_recipe.name = "deep-land-mine"
