@@ -43,7 +43,7 @@ data:extend({
         inventory_move_sound = item_sounds.resource_inventory_move,
         pick_sound = item_sounds.resource_inventory_pickup,
         drop_sound = item_sounds.resource_inventory_move,
-        default_import_location = "aquilo", stack_size = 100, weight = 5 * kg
+        default_import_location = "aquilo", stack_size = 100, weight = 4 * kg
     }, {
         type = "item", name = "silicon-cell",
         icon = "__kyran_sa_tweaks__/graphics/items/silicon-cell.png",
